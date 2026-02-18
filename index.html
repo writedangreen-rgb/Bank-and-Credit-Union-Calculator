@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2211,7 +2212,7 @@
               💡 <strong>Industry averages:</strong><br>
               Start Rate: 0.3-0.6%<br>
               Completion: 35-45%<br>
-              Funded: 45-60%
+              Funded: 80-95%
             </div>
             
             <p><strong>Optimization opportunities:</strong></p>
@@ -2292,12 +2293,12 @@
           </div>
 
           <div class="field-group">
-            <label for="fundedRate">Account Opening Rate</label>
+            <label for="fundedRate">Account Funded Rate</label>
             <div class="input-wrap">
-              <input id="fundedRate" class="pad-right" inputmode="decimal" value="50.00" required>
+              <input id="fundedRate" class="pad-right" inputmode="decimal" value="90.00" required>
               <span class="suffix">%</span>
             </div>
-            <div class="hint">Percentage of completed applications that get funded</div>
+            <div class="hint">Percentage of completed applications that result in a funded account</div>
             
             <div class="benchmark-range">
               <div class="benchmark-label">Industry Benchmarks</div>
@@ -2305,17 +2306,17 @@
                 <div class="benchmark-markers">
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">45%</div>
+                    <div class="benchmark-value">80%</div>
                     <div class="benchmark-type">Conservative</div>
                   </div>
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">50%</div>
+                    <div class="benchmark-value">90%</div>
                     <div class="benchmark-type">Standard</div>
                   </div>
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">60%</div>
+                    <div class="benchmark-value">95%</div>
                     <div class="benchmark-type">Aggressive</div>
                   </div>
                 </div>
@@ -2335,25 +2336,34 @@
     <div class="page" id="page4">
       <div class="wizard-layout">
         <div class="info-panel">
-          <h3 class="info-title">Quantifying Success</h3>
+          <h3 class="info-title">Understanding Account Lifetime Value</h3>
           <div class="info-content">
-            <p><strong>Lifetime Value (LTV)</strong> represents the total profit you earn from each account opened over its lifetime. This includes origination fees, servicing revenue, and any other monetization.</p>
+            <p><strong>Lifetime Value (LTV)</strong> represents the total profit you earn from each checking/savings account over its lifetime. Here's what the research shows:</p>
             
             <div class="info-highlight">
-              💡 <strong>Typical LTV for bank accounts:</strong> $8,000-12,000 depending on loan size, rate, and whether you service or sell the loan.
+              💡 <strong>Industry Estimates:</strong> Average customer lifetime value ranges from $2,000 to $4,500, with significant variation by customer segment.
             </div>
             
-            <p><strong>Measurement Lift</strong> quantifies how better attribution and insights improve campaign performance. When you can accurately measure what works, you optimize faster and waste less budget.</p>
-            
-            <p><strong>How measurement creates lift:</strong></p>
+            <p><strong>The 90/10 Rule:</strong> Retail banking follows a 90/10 business model where 10% of customers account for 90% of profits. This means CLV distribution is highly skewed:</p>
             <ul>
-              <li><strong>Better targeting:</strong> Identify and reach high-intent audiences</li>
-              <li><strong>Creative optimization:</strong> Double down on messaging that converts</li>
-              <li><strong>Channel allocation:</strong> Shift spend to highest-performing channels</li>
-              <li><strong>Reduced waste:</strong> Eliminate underperforming campaigns faster</li>
+              <li><strong>Super-profitable customers:</strong> ~10% of customers provide 67% of total relationship value</li>
+              <li><strong>Unprofitable customers:</strong> ~40% of customers provide just 1.4% of total value</li>
+              <li><strong>High-value customers:</strong> Can reach $10,000+ CLV (young professionals with mortgage/business loan potential)</li>
+              <li><strong>Low-value customers:</strong> Fee-sensitive, low-balance accounts may have negative lifetime value</li>
             </ul>
             
-            <p>Industry studies show measurement-driven optimization typically delivers 7-15% lift in campaign performance over baseline approaches.</p>
+            <p><strong>Key Variables That Drive CLV:</strong></p>
+            <ul>
+              <li><strong>Product Mix:</strong> Multi-product customers (checking + savings + loans + credit cards) have much higher CLV</li>
+              <li><strong>Balance Levels:</strong> Higher balances generate more revenue through interest spreads</li>
+              <li><strong>Fee Generation:</strong> Usage of fee-based services boosts profitability</li>
+              <li><strong>Relationship Length:</strong> Banking relationships often last decades</li>
+              <li><strong>Cross-Selling Success:</strong> Moving customers from basic checking to mortgages, investments, etc.</li>
+            </ul>
+            
+            <p><strong>Present Value Considerations:</strong> When discounted to present value using typical bank hurdle rates (8-12%), nominal lifetime values are reduced. With average acquisition cost at $390, banks need CLV well above that threshold to be profitable.</p>
+            
+            <p><strong>Measurement Lift:</strong> Industry studies show measurement-driven optimization typically delivers 7-15% lift in campaign performance through better targeting, creative optimization, channel allocation, and waste reduction.</p>
           </div>
         </div>
 
@@ -2365,7 +2375,7 @@
             <label for="ltv">Lifetime Value Per New Account</label>
             <div class="input-wrap">
               <span class="prefix">$</span>
-              <input id="ltv" class="money pad-left" inputmode="decimal" value="12,000.00" required>
+              <input id="ltv" class="money pad-left" inputmode="decimal" value="3,500.00" required>
             </div>
             <div class="hint">Total revenue generated from each new checking/savings account. This typically includes monthly maintenance fees, net interest margin on deposits, cross-sell value (credit cards, loans), and other relationship revenue over the average account tenure.</div>
             
@@ -2375,17 +2385,17 @@
                 <div class="benchmark-markers">
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">$9,000</div>
+                    <div class="benchmark-value">$2,000</div>
                     <div class="benchmark-type">Conservative</div>
                   </div>
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">$12,000</div>
+                    <div class="benchmark-value">$3,500</div>
                     <div class="benchmark-type">Standard</div>
                   </div>
                   <div class="benchmark-marker">
                     <div class="benchmark-dot"></div>
-                    <div class="benchmark-value">$15,000</div>
+                    <div class="benchmark-value">$8,000</div>
                     <div class="benchmark-type">Aggressive</div>
                   </div>
                 </div>
@@ -2831,13 +2841,13 @@
       ctr: 0.15,
       startRate: 0.40,
       completionRate: 40,
-      fundedRate: 50,
+      fundedRate: 90,
       siteVisitors: 1200000,
       visitorIdPct: 45,
       additionalIdPct: 35,
       retargetCtr: 0.70,
       retargetConversion: 0.75,
-      ltv: 12000,
+      ltv: 3500,
       liftPct: 10
     },
     conservative: {
@@ -2848,13 +2858,13 @@
       ctr: 0.10,
       startRate: 0.30,
       completionRate: 35,
-      fundedRate: 45,
+      fundedRate: 80,
       siteVisitors: 800000,
       visitorIdPct: 40,
       additionalIdPct: 33,
       retargetCtr: 0.60,
       retargetConversion: 0.60,
-      ltv: 9000,
+      ltv: 2000,
       liftPct: 7.5
     },
     aggressive: {
@@ -2865,13 +2875,13 @@
       ctr: 0.25,
       startRate: 0.60,
       completionRate: 45,
-      fundedRate: 60,
+      fundedRate: 95,
       siteVisitors: 1500000,
       visitorIdPct: 50,
       additionalIdPct: 38,
       retargetCtr: 0.80,
       retargetConversion: 0.85,
-      ltv: 15000,
+      ltv: 8000,
       liftPct: 15
     }
   };
@@ -3014,7 +3024,7 @@
     const ctr = pctToDec(parseNumberFromInput(els.ctr), "Click-Through Rate (%)");
     const startRate = pctToDec(parseNumberFromInput(els.startRate), "Application Start Rate (%)");
     const completionRate = pctToDec(parseNumberFromInput(els.completionRate), "Application Completion Rate (%)");
-    const fundedRate = pctToDec(parseNumberFromInput(els.fundedRate), "Account Opening Rate (%)");
+    const fundedRate = pctToDec(parseNumberFromInput(els.fundedRate), "Account Funded Rate (%)");
 
     const siteVisitors = parseNumberFromInput(els.siteVisitors);
     if (!isFinite(siteVisitors) || siteVisitors < 0) throw new Error("Site Visitors must be a number ≥ 0.");
