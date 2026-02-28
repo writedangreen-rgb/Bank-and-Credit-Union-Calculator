@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2401,6 +2400,19 @@
                 </div>
               </div>
             </div>
+
+            <!-- HNW Targeting Toggle -->
+            <div style="margin-top: 20px; padding: 16px; background: #f0f4ff; border: 1px solid #d0ddff; border-radius: 8px;">
+              <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;">
+                <input type="checkbox" id="hnwTargeting" style="margin-top: 3px; width: 18px; height: 18px; cursor: pointer;">
+                <div>
+                  <div style="color: var(--text); margin-bottom: 6px;">Enable High-Net-Worth Targeting</div>
+                  <div style="font-size: 13px; font-weight: 400; color: var(--text-muted); line-height: 1.5;">
+                    Identity-based targeting enables precise reach to affluent customers who maintain 2.5x higher account balances, hold more products, and generate significantly more fee revenue over their lifetime.
+                  </div>
+                </div>
+              </label>
+            </div>
           </div>
 
           <div class="field-group">
@@ -2783,6 +2795,23 @@
         submitEmail();
       }
     });
+
+    // Add HNW targeting toggle feedback
+    const hnwCheckbox = $('hnwTargeting');
+    if (hnwCheckbox) {
+      hnwCheckbox.addEventListener('change', () => {
+        const ltvInput = $('ltv');
+        const currentVal = parseFloat(ltvInput.value.replace(/[,$]/g, '')) || 3500;
+        
+        // Visual feedback - briefly highlight the LTV field
+        ltvInput.parentElement.parentElement.style.transition = 'background 0.3s';
+        ltvInput.parentElement.parentElement.style.background = hnwCheckbox.checked ? '#e8f5e9' : '';
+        
+        setTimeout(() => {
+          ltvInput.parentElement.parentElement.style.background = '';
+        }, 1000);
+      });
+    }
   });
 
   let currentPage = 1;
@@ -2803,6 +2832,7 @@
     retargetCtr: $("retargetCtr"),
     retargetConversion: $("retargetConversion"),
     ltv: $("ltv"),
+    hnwTargeting: $("hnwTargeting"),
     liftPct: $("liftPct"),
     notes: $("notes"),
     err: $("err"),
@@ -3034,8 +3064,13 @@
     const retargetCtr = pctToDec(parseNumberFromInput(els.retargetCtr), "Retargeting CTR/VTR (%)");
     const retargetConversion = pctToDec(parseNumberFromInput(els.retargetConversion), "Retargeting Conversion Rate (%)");
 
-    const ltv = parseNumberFromInput(els.ltv);
+    let ltv = parseNumberFromInput(els.ltv);
     if (!isFinite(ltv) || ltv < 0) throw new Error("Lifetime Value must be ≥ 0.");
+    
+    // Apply HNW multiplier if enabled
+    if (els.hnwTargeting && els.hnwTargeting.checked) {
+      ltv = ltv * 2.5;
+    }
 
     const liftPct = pctToDec(parseNumberFromInput(els.liftPct), "Incremental Lift (%)");
 
